@@ -1,5 +1,10 @@
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
+import { ToastContainer, toast } from 'react-toastify';
+
+import dns from "node:dns";
+dns.setServers(['8.8.8.8', '8.8.4.4'])
+
 
 
 // const geistSans = Geist({
@@ -35,8 +40,9 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={` h-full antialiased`}
     >
-      <body className={`${poppins.className}min-h-full flex flex-col`}>
+      <body className={`${poppins.className}min-h-full flex flex-col bg-base-200`}>
         {children}
+        <ToastContainer />
         </body>
     </html>
   );
